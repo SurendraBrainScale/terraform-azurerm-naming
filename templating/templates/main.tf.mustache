@@ -1,0 +1,12 @@
+module "{{name}}" {
+  source     = "{{{source}}}"
+  name       = var.name
+  prefixes   = var.prefixes
+  suffixes   = var.suffixes
+  separator  = var.separator != null ? var.separator : "{{{separator}}}"
+  max_length = {{max_length}}
+}
+
+locals {
+  result = regex("{{{regex}}}", module.{{name}}.result)
+}
